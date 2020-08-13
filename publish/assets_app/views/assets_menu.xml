@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--顶级菜单-->
+    <menuitem id="menu_assets" name="资产管理"/>
+
+
+    <!--资产列表触发-->
+    <act_window id="action_assets_main"
+                name="资产"
+                res_model="assets.main"
+                view_mode="tree,form"/>
+    <!--资产使用人管理触发-->
+    <act_window id="action_assets_user"
+                name="使用人管理"
+                res_model="assets.user"
+                view_mode="tree,form"/>
+    <!--资产借出触发-->
+    <act_window id="action_assets_use"
+                name="资产借出明细"
+                res_model="assets.use"
+                view_mode="kanban,tree,form,graph,pivot"/>
+
+    <!--其他资产相关触发-->
+    <!--类别触发-->
+    <act_window id="action_assets_cate"
+                name="类别"
+                res_model="assets.cate"
+                view_mode="tree,form"/>
+    <!--部门触发-->
+    <act_window id="action_assets_section"
+                name="部门"
+                res_model="assets.section"
+                view_mode="tree,form"/>
+    <!--地点触发-->
+    <act_window id="action_assets_site"
+                name="地点"
+                res_model="assets.site"
+                view_mode="tree,form"/>
+    <!--型号触发-->
+    <act_window id="action_assets_type"
+                name="型号"
+                res_model="assets.type"
+                view_mode="tree,form"/>
+
+    <!--资产列表菜单-->
+    <menuitem id="menu_assets_main"
+              name="资产"
+              parent="menu_assets"
+              action="action_assets_main"/>
+    <!--资产借出菜单-->
+    <menuitem id="menu_assets_use"
+              name="资产借出明细"
+              parent="menu_assets"
+              action="action_assets_use"/>
+    <!--使用人管理菜单-->
+    <menuitem id="menu_assets_user"
+              name="使用人管理"
+              parent="menu_assets"
+              action="action_assets_user"/>
+
+
+    <!--其他资产相关菜单-->
+    <menuitem id="menu_assets_other"
+              name="资产相关"
+              parent="menu_assets"/>
+    <!--类别菜单-->
+    <menuitem id="menu_assets_cate"
+              name="类别"
+              parent="menu_assets_other"
+              action="action_assets_cate"/>
+    <!--部门菜单-->
+    <menuitem id="menu_assets_section"
+              name="部门"
+              parent="menu_assets_other"
+              action="action_assets_section"/>
+    <!--地点菜单-->
+    <menuitem id="menu_assets_site"
+              name="地点"
+              parent="menu_assets_other"
+              action="action_assets_site"/>
+    <!--型号-->
+    <menuitem id="menu_assets_type"
+              name="型号"
+              parent="menu_assets_other"
+              action="action_assets_type"/>
+
+</odoo>

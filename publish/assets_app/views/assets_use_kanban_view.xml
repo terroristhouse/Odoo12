@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--资产使用看板视图-->
+    <record id="view_kanban_assets_use" model="ir.ui.view">
+        <field name="model">assets.use</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" quick_create="false" group_create="false" group_edit="false"
+                    group_delete="false">
+                <progressbar field="kanban_state" colors='{"done": "success", "blocked": "danger"}'/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click" class="oe_kanban_card">
+                            <div class="oe_kanban_header">
+                                <strong>
+                                    <a type="open">
+                                        <field name="zichan_id"/>
+                                    </a>
+                                </strong>
+                            </div>
+                            <ul>
+                                <li t-attf-class="oe_kanban_text_{{record.priority.raw_value lt '2' ? 'black': 'red'}}">
+                                    <span>使用人:</span>
+                                    <field name="name_id"/>
+                                </li>
+                                <li>
+                                    <span>使用地点:</span>
+                                    <field name="local_id"/>
+                                </li>
+                                <li>
+                                    <span>借出时间:</span>
+                                    <field name="create_on" force_save="1"/>
+                                </li>
+                                <li>
+                                    <span>回收时间:</span>
+                                    <field name="end_on" force_save="1"/>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="o_kanban_record_bottom">
+                            <field name="priority" widget="priority"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

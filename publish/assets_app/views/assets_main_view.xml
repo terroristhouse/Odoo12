@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--列表视图-->
+    <record id="view_tree_assets_main" model="ir.ui.view">
+        <field name="name">AssetsMain Tree</field>
+        <field name="model">assets.main</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="cate_id"/>
+                <field name="type_id"/>
+                <field name="section_id"/>
+                <field name="local_id"/>
+                <field name="user_id"/>
+                <field name="secret_id"/>
+                <field name="state_id"/>
+                <field name="number"/>
+                <field name="sequ"/>
+                <field name="desc_detail"/>
+            </tree>
+        </field>
+    </record>
+    <!--表单视图-->
+    <record id="view_form_assets_main" model="ir.ui.view">
+        <field name="model">assets.main</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="name"/>
+                            <field name="number"/>
+                            <field name="local_id"/>
+                            <field name="user_id"/>
+                            <field name="secret_id"/>
+                            <field name="type_id"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="sequ"/>
+                            <field name="section_id"/>
+                            <field name="cate_id"/>
+                            <field name="state_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="备注">
+                            <field name="desc_detail"/>
+                        </page>
+                    </notebook>
+                    <group name="group_bottom">
+                        <field name="use_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

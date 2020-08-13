@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--使用人列表-->
+    <record id="view_tree_assets_user" model="ir.ui.view">
+        <field name="model">assets.user</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="card_number"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+    <!--使用人表单-->
+    <record id="view_form_assets_user" model="ir.ui.view">
+        <field name="model">assets.user</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="card_number"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="备注">
+                            <field name="desc_detail"/>
+                        </page>
+                    </notebook>
+                    <group name="group_bottom">
+                        <field name="use_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

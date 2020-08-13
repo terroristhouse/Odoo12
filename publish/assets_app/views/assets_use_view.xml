@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--资产借出明细列表-->
+    <record id="view_tree_assets_use" model="ir.ui.view">
+        <field name="model">assets.use</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="state_use in ['2', '0']"
+                  decoration-bf="state_use in ['1']">
+                <field name="zichan_id"/>
+                <field name="name_id"/>
+                <field name="local_id"/>
+                <field name="create_on"/>
+                <field name="end_on"/>
+                <field name="lender"/>
+                <field name="state_use"/>
+                <field name="desc_detail"/>
+            </tree>
+        </field>
+    </record>
+    <!--资产借出明细表单-->
+    <record id="view_form_assets_use" model="ir.ui.view">
+        <field name="model">assets.use</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state_use" invisible="True"/>
+                    <button name="button_done"
+                            string="回收此设备"
+                            type="object"
+                            attrs="{'invisible':[('state_use','in',['0', '2'])]}"
+                            class="oe_highlight"/>
+                    <field name="stage_id" widget="statusbar" clickable="True"/>
+                </header>
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="zichan_id"/>
+                            <field name="name_id"/>
+                            <field name="local_id"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="lender"/>
+                            <field name="create_on" readonly="True" force_save="1"/>
+                            <field name="end_on" readonly="True" force_save="1"/>
+                            <field name="state_use"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="备注">
+                            <field name="desc_detail"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--图表视图-->
+    <record id="view_graph_assets_use" model="ir.ui.view">
+        <field name="model">assets.use</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="stage_id"/>
+            </graph>
+        </field>
+    </record>
+    <!--透视表视图-->
+    <record id="view_pivot_assets_use" model="ir.ui.view">
+        <field name="model">assets.use</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="stage_id" type="col"/>
+            </pivot>
+        </field>
+    </record>
+    <!--搜索视图-->
+    <record id="view_filter_assets_use" model="ir.ui.view">
+        <field name="model">assets.use</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="zichan_id"/>
+                <field name="name_id"/>
+                <filter name="group_create_on"
+                       string="借出时间"
+                       context="{'group_by': 'create_on'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

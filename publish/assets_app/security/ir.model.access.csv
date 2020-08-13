@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_main_user,MainUser,model_assets_main,assets_group_user,1,0,0,0
+access_main_manager,MainManager,model_assets_main,assets_group_manager,1,1,1,1
+access_cate_user,CateUser,model_assets_cate,assets_group_user,1,0,0,0
+access_cate_manager,CateManager,model_assets_cate,assets_group_manager,1,1,1,1
+access_section_user,SectionUser,model_assets_section,assets_group_user,1,0,0,0
+access_section_manager,SectionManager,model_assets_section,assets_group_manager,1,1,1,1
+access_site_user,SiteUser,model_assets_site,assets_group_user,1,0,0,0
+access_site_manager,SiteManager,model_assets_site,assets_group_manager,1,1,1,1
+access_type_user,TypeUser,model_assets_type,assets_group_user,1,0,0,0
+access_type_manager,TypeManager,model_assets_type,assets_group_manager,1,1,1,1
+access_user_user,UserUser,model_assets_user,assets_group_user,1,0,0,0
+access_user_manager,UserManager,model_assets_user,assets_group_manager,1,1,1,1
+access_use_user,UseUser,model_assets_use,assets_group_user,1,0,0,0
+access_use_manager,UseManager,model_assets_use,assets_group_manager,1,1,1,1
+access_use_stage_user,UseStageUser,model_assets_use_stage,assets_group_user,1,0,0,0
+access_use_stage_manager,UseStageManager,model_assets_use_stage,assets_group_manager,1,1,1,1

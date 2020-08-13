@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="stage_10" model="assets.use.stage">
+        <field name="name">准备借用</field>
+        <field name="sequence">10</field>
+        <field name="state">0</field>
+    </record>
+    <record id="stage_20" model="assets.use.stage">
+        <field name="name">外借中</field>
+        <field name="sequence">20</field>
+        <field name="state">1</field>
+    </record>
+    <record id="stage_30" model="assets.use.stage">
+        <field name="name">已回收</field>
+        <field name="sequence">90</field>
+        <field name="state">2</field>
+    </record>
+</odoo>
