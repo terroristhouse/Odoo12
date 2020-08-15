@@ -79,9 +79,16 @@
             <search>
                 <field name="zichan_id"/>
                 <field name="name_id"/>
+                <field name="local_id"/>
+                <filter name="filter_state_use_0" string="准备借用" domain="[('state_use', '=','0')]"/>
+                <filter name="filter_state_use_1" string="外借中" domain="[('state_use', '=','1')]"/>
+                <filter name="filter_state_use_2" string="已回收" domain="[('state_use', '=','2')]"/>
                 <filter name="group_create_on"
                        string="借出时间"
                        context="{'group_by': 'create_on'}"/>
+                <filter name="group_name_id" string="使用人" context="{'group_by': 'name_id'}"/>
+                <filter name="group_local_id" string="使用地点" context="{'group_by': 'local_id'}"/>
+                <filter name="group_stage_id" string="状态" context="{'group_by': 'stage_id'}"/>
             </search>
         </field>
     </record>

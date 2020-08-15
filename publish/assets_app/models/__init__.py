@@ -6,3 +6,5 @@ from . import assets_user
 from . import assets_site
 from . import assets_use_stage
 from . import assets_use
+from . import assets_manager
+from . import assets_main_stage

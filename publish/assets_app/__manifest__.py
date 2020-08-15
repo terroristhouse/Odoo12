@@ -13,6 +13,8 @@
         'views/assets_use_kanban_view.xml',
         'views/assets_user_view.xml',
         'data/assets_use_stage.xml',
+        'views/assets_main_kanban_view.xml',
+        'data/assets_main_stage.xml',
         'views/assets_menu.xml',
     ]
 }

@@ -8,7 +8,7 @@
     <act_window id="action_assets_main"
                 name="资产"
                 res_model="assets.main"
-                view_mode="tree,form"/>
+                view_mode="kanban,tree,form,graph,pivot"/>
     <!--资产使用人管理触发-->
     <act_window id="action_assets_user"
                 name="使用人管理"
@@ -40,6 +40,11 @@
     <act_window id="action_assets_type"
                 name="型号"
                 res_model="assets.type"
+                view_mode="tree,form"/>
+    <!--借出人触发-->
+    <act_window id="action_assets_manager"
+                name="借出人管理"
+                res_model="assets.manager"
                 view_mode="tree,form"/>
 
     <!--资产列表菜单-->
@@ -78,10 +83,14 @@
               name="地点"
               parent="menu_assets_other"
               action="action_assets_site"/>
-    <!--型号-->
+    <!--型号菜单-->
     <menuitem id="menu_assets_type"
               name="型号"
               parent="menu_assets_other"
               action="action_assets_type"/>
-
+    <!--借出人菜单-->
+    <menuitem id="menu_assets_manager"
+              name="借出人管理"
+              parent="menu_assets_other"
+              action="action_assets_manager"/>
 </odoo>

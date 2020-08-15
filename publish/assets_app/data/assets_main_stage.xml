@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="stage_40" model="assets.main.stage">
+        <field name="name">在用</field>
+        <field name="sequence">40</field>
+        <field name="state">zaiyong</field>
+    </record>
+    <record id="stage_41" model="assets.main.stage">
+        <field name="name">待修</field>
+        <field name="sequence">41</field>
+        <field name="state">daixiu</field>
+    </record>
+    <record id="stage_42" model="assets.main.stage">
+        <field name="name">在修</field>
+        <field name="sequence">42</field>
+        <field name="state">zaixiu</field>
+    </record>
+    <record id="stage_45" model="assets.main.stage">
+        <field name="name">备用</field>
+        <field name="sequence">45</field>
+        <field name="state">beiyong</field>
+    </record>
+    <record id="stage_50" model="assets.main.stage">
+        <field name="name">闲置</field>
+        <field name="sequence">50</field>
+        <field name="state">xianzhi</field>
+    </record>
+    <record id="stage_60" model="assets.main.stage">
+        <field name="name">调剂</field>
+        <field name="sequence">60</field>
+        <field name="state">tiaoji</field>
+    </record>
+    <record id="stage_70" model="assets.main.stage">
+        <field name="name">待报废</field>
+        <field name="sequence">70</field>
+        <field name="state">daibaofei</field>
+    </record>
+    <record id="stage_80" model="assets.main.stage">
+        <field name="name">报废</field>
+        <field name="sequence">80</field>
+        <field name="state">baofei</field>
+    </record>
+</odoo>

@@ -20,16 +20,18 @@ class AssetsMain(models.Model):
          ('jimi', '机密'),
          ('juemi', '绝密')], '密级', required=True
     )  # 资产密级
-    state_id = fields.Selection(
-        [('zaiyong', '在用'),
-         ('daixiu', '待修'),
-         ('zaixiu', '在修'),
-         ('beiyong', '备用'),
-         ('xianzhi', '闲置'),
-         ('tiaoji', '调剂'),
-         ('daibaofei', '待报废'),
-         ('baofei', '报废')], '资产状态', required=True
-    )  # 资产状态
+    priority = fields.Selection(
+        [('0', 'Low'),
+         ('1', 'Normal'),
+         ('2', 'High')],
+        'Priority', default='1'
+    )
+    kanban_state = fields.Selection(
+        [('normal', 'In Progress'),
+         ('blocked', 'Blocked'),
+         ('done', 'Ready for next stage')],
+        'Kanban State', default='normal'
+    )
     type_id = fields.Many2one('assets.type', '型号')  # 资产型号
     use_ids = fields.One2many('assets.use', 'zichan_id', string='使用记录')  # 使用记录
 
@@ -39,3 +41,15 @@ class AssetsMain(models.Model):
         ('unique_course_sequ',
          'unique(sequ)', '设备序列号重复！')
     ]
+
+    @api.model
+    def _default_stage(self):
+        Stage = self.env['assets.main.stage']
+        return Stage.search([], limit=1)
+
+    @api.model
+    def _group_expand_stage_id(self, stages, domain, order):
+        return stages.search([], order=order)
+
+    stage_id = fields.Many2one('assets.main.stage', default=_default_stage, group_expand='_group_expand_stage_id')
+    state_use = fields.Selection(related='stage_id.state')

@@ -10,11 +10,12 @@ class Use(models.Model):
 
     zichan_id = fields.Many2one('assets.main', '设备编号', required=True)
     name_id = fields.Many2one('assets.user', '使用人', required=True)
-    local_id = fields.Many2one('assets.site', '使用地点')
-    create_on = fields.Date('借出时间', default=lambda self: fields.Date.today())
+    local_id = fields.Many2one('assets.site', '使用地点', required=True)
+    create_on = fields.Date('借出时间')
     end_on = fields.Date('回收时间')
-    lender = fields.Many2one('assets.user', '借出人', required=True)
+    lender = fields.Many2one('assets.manager', '借出人', required=True)
     desc_detail = fields.Text('备注')  # 借用备注
+    # color = fields.Integer('Color Index')
     # state_use = fields.Selection(
     #     [('0', '准备借用'),
     #      ('1', '外借中'),
@@ -51,7 +52,7 @@ class Use(models.Model):
         self.write({'end_on': datetime.date.today()})
         # return True
         Stage = self.env['assets.use.stage']
-        done_stage =Stage.search(
+        done_stage = Stage.search(
             [('state', '=', '2')], limit=1
         )
         for checkout in self:
@@ -63,5 +64,11 @@ class Use(models.Model):
         today = fields.Date.today()
         if self.state_use == '2':
             self.end_on = today
+        elif self.state_use == '1':
+            self.create_on = today
+            self.end_on = ''
         else:
             self.end_on = ''
+            self.create_on = ''
+
+# , default=lambda self: fields.Date.today()

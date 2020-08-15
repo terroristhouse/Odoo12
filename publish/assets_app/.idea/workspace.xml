@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1fzyNODkUxovD2Ta8rq2sQR0A6v" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,11 +47,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597235175078</updated>
-      <workItem from="1597235197727" duration="8851000" />
+      <workItem from="1597235197727" duration="9122000" />
+      <workItem from="1597482168945" duration="15898000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="530" y="306" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597491487731">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="530" y="306" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1597491487731" />
   </component>
 </project>
