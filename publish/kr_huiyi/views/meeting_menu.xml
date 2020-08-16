@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--顶级菜单-->
+    <menuitem id="menu_meeting" name="会议"/>
+
+    <!--会议记录触发-->
+    <act_window id="action_meeting_main"
+                name="会议记录"
+                res_model="meeting.main"
+                view_mode="calendar,tree,kanban,form"/>
+    <!--会议地点触发-->
+    <act_window id="action_meeting_site"
+                name="会议地点"
+                res_model="meeting.site"
+                view_mode="tree,form"/>
+    <!--二级菜单-->
+    <!--会议记录菜单-->
+    <menuitem id="menu_meeting_main" name="会议记录" parent="menu_meeting" action="action_meeting_main"/>
+    <!--会议相关菜单-->
+    <menuitem id="menu_meeting_other" name="会议相关" parent="menu_meeting"/>
+
+    <!--三级菜单-->
+    <menuitem id="menu_meeting_site" name="地点" parent="menu_meeting_other" action="action_meeting_site"/>
+</odoo>

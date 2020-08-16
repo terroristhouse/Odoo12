@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="meeting_main_kanban" model="ir.ui.view">
+        <field name="model">meeting.main</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="name" class="o_kanban_small_column" quick_create="false" group_create="false"
+                    group_edit="false"
+                    group_delete="false">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click" class="oe_kanban_card">
+                            <div class="or_kanban_body">
+                                <div>
+                                    <strong>
+                                        <a type="open">
+                                            <field name="name"/>
+                                        </a>
+                                    </strong>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span>开始时间:</span>
+                                        <field name="start_time"/>
+                                    </li>
+                                    <li>
+                                        <span>结束时间:</span>
+                                        <field name="end_time"/>
+                                    </li>
+                                    <li>
+                                        <span>备注:</span>
+                                        <field name="remark"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

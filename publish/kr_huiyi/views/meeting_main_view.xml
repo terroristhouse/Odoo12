@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--        会议记录列表-->
+    <record id="meeting_main_list" model="ir.ui.view">
+        <field name="model">meeting.main</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="remark"/>
+            </tree>
+        </field>
+    </record>
+    <!--        业务文档表单视图-->
+    <record id="meeting_main_form" model="ir.ui.view">
+        <field name="model">meeting.main</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="name"/>
+                            <field name="start_time"/>
+                            <field name="end_time"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="remark"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--        日历视图-->
+    <record id="view_calendar_meeting_main" model="ir.ui.view">
+        <field name="model">meeting.main</field>
+        <field name="arch" type="xml">
+            <calendar date_start="start_time" date_stop="end_time" color="name" quick_add="false"
+                      event_open_popup="true">
+                <!-- 展示字段定义在这里 -->
+                <field name="name"/>
+                <field name="remark"/>
+            </calendar>
+        </field>
+    </record>
+    <!--搜索视图-->
+    <record id="meeting_main_search" model="ir.ui.view">
+        <field name="model">meeting.main</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="group_main_name" string="地点" context="{'group_by': 'name'}"/>
+                <filter name="group_main_start_time" string="开始时间" context="{'group_by': 'start_time'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

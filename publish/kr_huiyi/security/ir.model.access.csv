@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_main_user,MainUser,model_meeting_main,assets_app.assets_group_user,1,0,0,0
+access_main_manager,MainManager,model_meeting_main,assets_app.assets_group_manager,1,1,1,1
+access_site_user,SiteUser,model_meeting_site,assets_app.assets_group_user,1,0,0,0
+access_site_manager,SiteManager,model_meeting_site,assets_app.assets_group_manager,1,1,1,1
